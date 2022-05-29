@@ -9,7 +9,7 @@ public class MessageService implements IMessageService{
 
 	@Override
 	public Message addMessage(Message m) {
-		// TODO Auto-generated method stub
+
 		m.setId(++ix);
 		new MyMqttClient().runClient(m);
 		return m;

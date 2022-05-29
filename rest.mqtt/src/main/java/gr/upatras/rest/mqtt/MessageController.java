@@ -21,8 +21,9 @@ public class MessageController {
 
 	@RequestMapping(value = "/send-message/", produces = { "application/json;charset=utf-8" }, consumes = {
 			"application/json;charset=utf-8" }, method = RequestMethod.POST)
+	
 	public ResponseEntity<Message> createProduct(
-			@ApiParam(value = "The Message to be transmitted", required = true) @RequestBody Message m) {
+			@ApiParam(value = "Message to be transmitted", required = true) @RequestBody Message m) {
 		log.info("Will add a new message");
 		Message message = messageService.addMessage(m);
 		return new ResponseEntity<Message>(message, HttpStatus.OK);
